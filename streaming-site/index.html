@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineStream • Watch Movies & Shows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-overlay"></div>
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-icon">🍿</span>
+        <span class="logo-text">CineStream</span>
+      </div>
+      <nav class="site-nav">
+        <a href="#trending">Trending</a>
+        <a href="#originals">Originals</a>
+        <a href="#movies">Movies</a>
+        <a href="#shows">TV Shows</a>
+        <a href="#plans">Plans</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="open-search" aria-label="Search library">
+          <span class="material-icon">search</span>
+        </button>
+        <button class="icon-btn" aria-label="Open notifications">
+          <span class="material-icon">notifications</span>
+        </button>
+        <button class="cta-btn">Join Now</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="tag">New Release</p>
+          <h1>Neo Horizons</h1>
+          <p class="description">
+            A group of explorers unlocks portals to parallel cities where
+            familiar faces may not be friends. Stream the sci-fi thriller
+            everyone's talking about.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn">
+              <span class="material-icon">play_arrow</span>
+              Watch Now
+            </button>
+            <button class="secondary-btn" data-watchlist="Neo Horizons">
+              <span class="material-icon">add</span>
+              Watchlist
+            </button>
+          </div>
+          <div class="metadata">
+            <span>PG-13</span>
+            <span>2h 16m</span>
+            <span>Sci-Fi • Thriller</span>
+            <span>4K</span>
+          </div>
+        </div>
+        <div class="hero-backdrop"></div>
+      </section>
+
+      <section class="search-section" id="search">
+        <div class="search-wrapper">
+          <span class="material-icon">search</span>
+          <input
+            type="text"
+            id="library-search"
+            placeholder="Search for movies, shows, or genres"
+            autocomplete="off"
+          />
+          <button class="clear-search" id="clear-search">Clear</button>
+        </div>
+        <div class="filter-group" role="tablist" aria-label="Filter catalog">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="movie">Movies</button>
+          <button class="filter-btn" data-filter="show">Shows</button>
+          <button class="filter-btn" data-filter="original">Originals</button>
+          <button class="filter-btn" data-filter="trending">Trending</button>
+        </div>
+      </section>
+
+      <section class="carousel" id="trending">
+        <div class="section-heading">
+          <h2>Trending Now</h2>
+          <a href="#" class="view-all">View all</a>
+        </div>
+        <div class="card-grid" id="trending-grid"></div>
+      </section>
+
+      <section class="continue-watching" id="continue">
+        <div class="section-heading">
+          <h2>Continue Watching</h2>
+          <a href="#" class="view-all">View history</a>
+        </div>
+        <div class="progress-row" id="continue-grid"></div>
+      </section>
+
+      <section class="carousel" id="originals">
+        <div class="section-heading">
+          <h2>CineStream Originals</h2>
+          <a href="#" class="view-all">View all</a>
+        </div>
+        <div class="card-grid" id="original-grid"></div>
+      </section>
+
+      <section class="explore" id="movies">
+        <div class="section-heading">
+          <h2>Explore the Catalog</h2>
+          <a href="#" class="view-all">Browse library</a>
+        </div>
+        <div class="catalog-grid" id="catalog-grid"></div>
+      </section>
+
+      <section class="plans" id="plans">
+        <div class="section-heading">
+          <h2>Choose Your Plan</h2>
+          <p>Stream in 4K Ultra HD, cancel anytime.</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <h3>Starter</h3>
+            <p class="price"><span>$7.99</span>/month</p>
+            <ul>
+              <li>HD streaming</li>
+              <li>1 screen at a time</li>
+              <li>Ad-supported</li>
+            </ul>
+            <button class="secondary-btn">Get Starter</button>
+          </article>
+          <article class="plan-card featured">
+            <div class="badge">Popular</div>
+            <h3>Premium</h3>
+            <p class="price"><span>$13.99</span>/month</p>
+            <ul>
+              <li>4K Ultra HD</li>
+              <li>3 screens at once</li>
+              <li>Offline downloads</li>
+              <li>No ads</li>
+            </ul>
+            <button class="primary-btn">Start Premium</button>
+          </article>
+          <article class="plan-card">
+            <h3>Family</h3>
+            <p class="price"><span>$18.99</span>/month</p>
+            <ul>
+              <li>4K Ultra HD + HDR</li>
+              <li>6 screens at once</li>
+              <li>Kids mode & profiles</li>
+              <li>Early access premieres</li>
+            </ul>
+            <button class="secondary-btn">Choose Family</button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="watchlist-panel" aria-live="polite" aria-label="Watchlist">
+      <div class="watchlist-header">
+        <h3>Your Watchlist</h3>
+        <button class="icon-btn" id="close-watchlist" aria-label="Close watchlist">
+          <span class="material-icon">close</span>
+        </button>
+      </div>
+      <ul class="watchlist-items" id="watchlist"></ul>
+      <p class="empty-message">Add something to get started.</p>
+    </aside>
+
+    <button class="floating-watchlist" id="toggle-watchlist" aria-haspopup="dialog">
+      <span class="material-icon">playlist_play</span>
+    </button>
+
+    <template id="card-template">
+      <article class="media-card" data-category="">
+        <div class="poster">
+          <img src="" alt="" loading="lazy" />
+          <button class="poster-play" aria-label="Play trailer">
+            <span class="material-icon">play_arrow</span>
+          </button>
+          <span class="tag-pill"></span>
+        </div>
+        <div class="media-info">
+          <h3></h3>
+          <p class="detail"></p>
+          <button class="ghost-btn" data-action="watchlist">
+            <span class="material-icon">add</span>
+            Watchlist
+          </button>
+        </div>
+      </article>
+    </template>
+
+    <template id="continue-template">
+      <article class="progress-card">
+        <div class="poster">
+          <img src="" alt="" loading="lazy" />
+          <div class="progress-bar">
+            <div class="progress-value"></div>
+          </div>
+        </div>
+        <div class="progress-info">
+          <h3></h3>
+          <span class="episode"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
